@@ -1,8 +1,9 @@
-#!/bin/bash
+######!/bin/bash
 set -e
+#nvm use 10
 echo "生成SUMMARY文件"
-gitbook serve  &
-sleep 10
+(gitbook serve) &
+sleep 20
 echo "提交变动"
 git add .
 git commit -m "update"
