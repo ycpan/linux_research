@@ -1,5 +1,13 @@
 #!/bin/bash
 set -e
+echo "生成SUMMARY文件"
+gitbook serve  &
+sleep 10
+echo "提交变动"
+git add .
+git commit -m "update"
+git push
+echo "发布"
 GIT_REPO_URL=$(git config --get remote.origin.url)
 #sed -i 's/if(m)for(n.handler&&/if(m)for(n.handler&&/g' gitbook/theme.js
 cd _book
